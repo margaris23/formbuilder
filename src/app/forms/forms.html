@@ -1,0 +1,13 @@
+<h3>Forms</h3>
+<ul class="form-list">
+  <!--<li class="forms-item" ng-repeat="form in forms" ng-class="{'form-done': form.isDone}">
+    <label><input type="checkbox" ng-click="check()" ng-model="form.isDone"/>&nbsp;{{form.label}}</label>
+  </li>-->
+  <li ng-repeat="form in forms">{{$index}} : <a href="#/forms/{{form.id}}">{{form.name}}</a></li>
+  <!--<li class="form-item">
+    <form ng-submit="add()">
+      <input type="text" placeholder="New item..." ng-model="label"/>
+      <button type="submit" ng-disabled="posting || !label">Add</button>
+    </form>
+  </li>-->
+</ul>

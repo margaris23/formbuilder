@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="slush1">
+<html ng-app="myapp">
   <head>
     <meta charset="utf-8"/>
     <title>Form Builder</title>
@@ -11,7 +11,7 @@
     <!-- endinject -->
   </head>
   <body>
-    <h1>Form Builder</h1>
+    <h1>Form Builder App</h1>
     <h2>List</h2>
     <ng-view></ng-view>
     <!-- inject:vendor:js -->
@@ -20,9 +20,11 @@
     <!-- endinject -->
     <!-- inject:js -->
     <script src="/forms/form.js"></script>
+    <script src="/forms/form-service.js"></script>
+    <script src="/forms/form-directive.js"></script>
     <script src="/forms/form-controller.js"></script>
     <script src="/app.js"></script>
-    <script src="/slush1-templates.js"></script>
+    <script src="/formbuilder-templates.js"></script>
     <!-- endinject -->
   </body>
 </html>

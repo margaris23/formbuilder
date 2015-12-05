@@ -1,8 +1,8 @@
 {
-  "name": "slush1",
+  "name": "formbuilder",
   "main": [
-    "/dist/slush1.min.js",
-    "/dist/slush1.min.css"
+    "/dist/formbuilder.min.js",
+    "/dist/formbuilder.min.css"
   ],
   "version": "0.1.0",
   "description": "TODO",
