@@ -6,8 +6,6 @@ describe('FormSvc', function () {
   beforeEach(module('myapp'));
 
   beforeEach(inject(function ($injector) {
-    scope = $injector.get('$rootScope');
-
     formSvc = function () {
       return $injector.get('FormSvc');
     };

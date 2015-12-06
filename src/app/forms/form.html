@@ -1,9 +1,14 @@
-<h3>Form {{selected.form.name}}</h3>
+<h3>Form {{form.name}}</h3>
+
+<!-- Previewer -->
 <ul class="form-list">
   <!--<li class="forms-item" ng-repeat="form in forms" ng-class="{'form-done': form.isDone}">
     <label><input type="checkbox" ng-click="check()" ng-model="form.isDone"/>&nbsp;{{form.label}}</label>
   </li>-->
-  <li ng-repeat="item in selected.form.items">{{item}}</a></li>
+  <li class="removable"
+      ng-class="item.active ? 'active' : 'inactive'"
+      ng-repeat="item in form.items track by $index"
+      ng-click="toggle(item)">{{item}}</li>
   <!--<li class="form-item">
     <form ng-submit="add()">
       <input type="text" placeholder="New item..." ng-model="label"/>
@@ -11,3 +16,19 @@
     </form>
   </li>-->
 </ul>
+
+<!-- Editor -->
+<div>
+  <select ng-options="element.name for element in formElements" ng-model="selector.element">
+    <!--<option value="" disabled selected>-- Element --</option>-->
+  </select>
+  <input type="text" ng-model="selector.value">
+  <select ng-options="type.name for type in formElementTypes" ng-model="selector.type">
+<!--    <option value="" disabled selected>-- type --</option> -->
+  </select>
+  <span style="cursor: pointer" ng-click="add()">Add</span>
+</div>
+
+<button ng-click="save()">Save</button>
+
+<a href="/#/forms">Back</a>

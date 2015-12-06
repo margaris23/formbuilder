@@ -5,10 +5,10 @@ angular.module('myapp', [
 ])
 .config(function ($routeProvider) {
   'use strict';
-  console.log('TEST');
+
   $routeProvider
     .when('/forms', {
-      controller: 'FormCtrl',
+      controller: 'FormsCtrl',
       templateUrl: '/forms/forms.html'
     })
     .when('/forms/:id', {
@@ -24,3 +24,4 @@ angular.module('myapp', [
       redirectTo: '/forms'
     });
 });
+
