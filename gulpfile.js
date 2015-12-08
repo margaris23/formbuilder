@@ -2,6 +2,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     g = require('gulp-load-plugins')({lazy: false}),
     noop = g.util.noop,
     es = require('event-stream'),

@@ -1,6 +1,6 @@
-
 angular.module('myapp', [
   'ngRoute',
+  'myapp.connections',
   'myapp.forms'
 ])
 .config(function ($routeProvider) {

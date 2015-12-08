@@ -1,6 +1,6 @@
 angular
     .module('myapp.forms')
-    .factory('FormSvc', function ($q) {
+    .factory('FormSvc', function ($q, ConnSvc) {
         'use strict';
 
         var FORM_ELEMENT = {
@@ -37,7 +37,7 @@ angular
         return {
             list: function (cb) {
                 cb = cb || Function.prototype;
-                cb(null, [dummy]);
+                ConnSvc.send(ConnSvc.GET_FORMS, cb);
             },
             save: function (form, cb) {
                 cb = cb || Function.prototype;
@@ -46,16 +46,20 @@ angular
                 }
 
                 // send request to server
-                cb(null);
+                ConnSvc.send('save', form, cb);
             },
             remove: function (/* form, cb */) {
 
             },
-            edit: function (/*id*/) {
+            edit: function (id) {
                 var deferred = $q.defer();
 
-                // tmp
-                deferred.resolve(dummy);
+                ConnSvc.send(ConnSvc.GET_FORM, { id: id }, function (error, reply) {
+                    if (!error) {
+                        return defered.resolve(reply);
+                    }
+                    return defered.reject();
+                });
 
                 return deferred.promise;
             },
